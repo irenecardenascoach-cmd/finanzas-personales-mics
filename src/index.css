@@ -1,0 +1,140 @@
+/* ─── MINDSET FINANCE – TOKENS GLOBALES ─────────────────────────────────────
+   PRD §5: Urbanist, beige/hueso, gris grafito, cero colores chillones
+   ─────────────────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
+
+:root {
+  /* Colores base (PRD §5) */
+  --bg:           #F5F2EE;
+  --bg-card:      #FDFCFB;
+  --bg-dark:      #1C1A18;
+
+  /* Textos (PRD §5: gris grafito #2D3436) */
+  --text-primary:   #2D3436;
+  --text-secondary: #6C6460;
+  --text-muted:     #AAA29A;
+
+  /* Acento único – ámbar cálido, nunca chillón */
+  --accent:         #C4873A;
+  --accent-soft:    #EAD9BF;
+  --accent-dim:     #8B5E27;
+
+  /* Estados semánticos */
+  --green:   #6B8F71;
+  --red:     #A85850;
+  --yellow:  #C4A53A;
+
+  /* Bordes */
+  --border:  #E5DED5;
+  --border-strong: #CFC7BC;
+
+  /* Tipografía (PRD §5) */
+  --font: 'Urbanist', system-ui, -apple-system, sans-serif;
+
+  /* Espaciado */
+  --radius-sm:  10px;
+  --radius:     16px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+
+  /* Sombras */
+  --shadow-sm:  0 1px 4px rgba(45, 52, 54, 0.06);
+  --shadow:     0 4px 16px rgba(45, 52, 54, 0.10);
+  --shadow-lg:  0 12px 40px rgba(45, 52, 54, 0.14);
+
+  /* Transiciones */
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── RESET ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: var(--font);
+}
+
+/* ─── UTILIDADES ─────────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* ─── ANIMACIONES ────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(196, 135, 58, 0.35); }
+  70%  { box-shadow: 0 0 0 16px rgba(196, 135, 58, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(196, 135, 58, 0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes success-pop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.animate-fade-in  { animation: fadeIn 0.3s var(--transition) both; }
+.animate-fade-up  { animation: fadeUp 0.4s var(--transition) both; }
+.animate-slide-up { animation: slide-up 0.35s cubic-bezier(0.32, 0.72, 0, 1) both; }
