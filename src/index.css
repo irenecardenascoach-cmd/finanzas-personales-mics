@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;900&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  --bg:            #F7F4F0;
+  --bg-card:       #FDFBF8;
+  --bg-dark:       #18160F;
+  --text-1:        #1A1814;
+  --text-2:        #5C574E;
+  --text-3:        #9C9488;
+  --text-inv:      #FDFBF8;
+  --accent:        #C4873A;
+  --accent-soft:   #F0DEC4;
+  --accent-dim:    #8B5E27;
+  --green:         #3A8F5C;
+  --green-soft:    #C8EDD8;
+  --red:           #C43A3A;
+  --red-soft:      #F5CECE;
+  --yellow:        #C4A83A;
+  --yellow-soft:   #F0E8C4;
+  --blue:          #3A6EC4;
+  --blue-soft:     #C4D8F5;
+  --purple:        #7C3AC4;
+  --purple-soft:   #E0C4F5;
+  --border:        #E8E2D8;
+  --border-2:      #D4CCBE;
+  --font:          'Urbanist', system-ui, sans-serif;
+  --font-display:  'DM Serif Display', Georgia, serif;
+  --r-sm: 8px; --r: 14px; --r-lg: 20px; --r-xl: 28px;
+  --sh-sm: 0 1px 4px rgba(26,24,20,0.06);
+  --sh:    0 4px 16px rgba(26,24,20,0.09);
+  --sh-lg: 0 12px 40px rgba(26,24,20,0.13);
+  --ease: cubic-bezier(0.4,0,0.2,1);
+  --t: 0.2s; --t-lg: 0.4s;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{font-size:16px;-webkit-text-size-adjust:100%;}
+body{font-family:var(--font);background:var(--bg);color:var(--text-1);min-height:100dvh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+#root{max-width:430px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;}
+button{font-family:var(--font);cursor:pointer;border:none;background:none;}
+input,textarea,select{font-family:var(--font);}
+a{text-decoration:none;color:inherit;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:10px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pop{0%{transform:scale(.85);opacity:0;}60%{transform:scale(1.05);}100%{transform:scale(1);opacity:1;}}
+.fade-up{animation:fadeUp .35s var(--ease) both;}
+.fade-in{animation:fadeIn .25s var(--ease) both;}
+.slide-up{animation:slideUp .38s cubic-bezier(.32,.72,0,1) both;}
+.pop{animation:pop .3s var(--ease) both;}
